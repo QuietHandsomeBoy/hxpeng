@@ -1,0 +1,421 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 26px;
+    margin-bottom: 13px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+a {
+    color: #0e83cd;
+    text-decoration: none;
+}
+
+a:active,
+a:hover,
+input:focus {
+    outline: 0;
+}
+
+a, img, button, input, textarea {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+input, textarea {
+    -webkit-appearance: none;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "opensans", "Optima", "Microsoft Yahei", sans-serif;
+    font-size: 62.5%;
+    color: #777777;
+    background-color: #E4EBF0;
+}
+
+.clear {
+    clear: both;
+}
+
+/*container start*/
+#container {
+    width: 75%;
+    margin: 20px auto;
+    font-size: 1.6em;
+    line-height: 1.625;
+}
+
+#leftBox, #rightBox {
+    min-height: 400px;
+}
+
+#leftBox {
+    width: 65%;
+    float: left;
+
+}
+
+#mobileMenuBtn {
+    visibility: hidden;
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    color: #337ab7;
+    border: 0px;
+    background: none;
+    outline: none;
+    padding: 10px 0px;
+}
+
+#leftBox .content article, #rightBox section {
+    background: #ffffff;
+    display: block;
+    margin: 0px 0px 60px;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0 !important;
+    box-shadow: 0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+}
+
+#leftBox .content article .article-info {
+    padding: 30px 60px 20px;
+    background-color: #fff;
+}
+
+#leftBox .content article .article-info .article-content {
+
+}
+
+#leftBox .content article .article-info .article-content .article_title {
+    font-size: 2.0em;
+    margin: 20px 0px 10px;
+}
+
+#leftBox .content article .article-info .article-content .article_about {
+
+}
+
+#leftBox .content article .article-meta {
+    background: #F9F9F9;
+    padding: 15px 60px;
+}
+
+#leftBox .content article .article-meta span {
+    padding-right: 40px;
+    float: left;
+    display: block;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+#leftBox .content article .article-meta span i {
+    padding-right: 5px;
+}
+
+#leftBox .content article .article-meta span a {
+    color: #999;
+    font-weight: 700;
+    webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+#leftBox .content article .article-meta span a:hover {
+    color: #13C4A5;
+    text-decoration: none;
+}
+
+#rightBox {
+    width: 32%;
+    float: right;
+}
+
+#rightBox section {
+    padding: 40px 40px 60px;
+    background-color: #fff;
+}
+
+#rightBox section .searchBox {
+    position: relative;
+    color: #aaaaaa;
+}
+
+#rightBox section .searchBox label {
+    position: relative;
+    display: block;
+}
+
+#rightBox section .searchBox label:before {
+    display: block;
+    font-family: FontAwesome;
+    text-decoration: inherit;
+    content: "";
+    position: absolute;
+    right: 15px;
+    line-height: 40px;
+    z-index: 1;
+}
+
+#rightBox section .searchBox label input[type="search"] {
+    width: 100%;
+    position: relative;
+    font-weight: normal;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    font-size: 1.1em;
+    line-height: 1.625;
+    color: #555555;
+    vertical-align: middle;
+    border: 2px solid #eeeeee;
+    border-radius: 3px;
+    margin-bottom: 0.71428571428571em;
+    -webkit-transition: border-color ease-in-out .3s;
+    -o-transition: border-color ease-in-out .3s;
+    transition: border-color ease-in-out .3s;
+    font-family: "opensans", "Optima", "Microsoft Yahei", sans-serif;
+}
+
+#rightBox section .searchBox label input[type="search"]:focus {
+    outline: none;
+    border: 2px solid #1b8ecc;
+}
+
+#rightBox section .searchBox input[type="submit"] {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-indent: -9999px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    line-height: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    z-index: 2;
+    outline: none;
+}
+
+#rightBox section .title {
+    font-size: 1.5em;
+    display: inline-block;
+    color: #332626;
+}
+
+#rightBox section .about-website-box .about-website-info p {
+    margin: 0 0 13px;
+    font-size: 1.0em;
+}
+
+/** =======================
+ * Contenedor Principal
+ ===========================*/
+.menuui {
+    padding: 0px;
+    width: 100%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.menuui li {
+    outline: none;
+}
+
+.menuui .link {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 5px;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.menuui li:last-child .link {
+    border-bottom: 0;
+}
+
+.menuui li i {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.menuui li i.fa-chevron-down, .menuui li i.fa-chevron-right {
+    right: 12px;
+    left: auto;
+    font-size: 16px;
+}
+
+.menuui li.open .link {
+
+}
+
+.menuui li.open i {
+
+}
+
+.menuui li.open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/**
+ * childMenu
+ -----------------------------*/
+.childMenu {
+    display: none;
+}
+
+.childMenu li {
+    outline: none;
+}
+
+.childMenu a {
+    display: block;
+    text-decoration: none;
+    padding: 12px 12px 12px 25px;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.childMenu a:hover {
+}
+
+/*滑动条*/
+@media (min-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 16px;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: rgba(245, 245, 245, 0);
+    }
+
+    /*定义滑块 内阴影+圆角*/
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(18, 64, 180, 0.64);
+        background-color: #555;
+    }
+}
+
+@media (max-width: 1548px) {
+    #container {
+        width: 90%;
+    }
+
+    #leftBox {
+        width: 62%;
+    }
+
+    #rightBox {
+        width: 35%;
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        font-size: 55.5%;
+    }
+
+    #container {
+        width: 95%;
+    }
+
+    #leftBox {
+        width: 62%;
+    }
+
+    #rightBox {
+        width: 35%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .article-info {
+        padding: 30px 30px 20px !important;
+    }
+
+    #rightBox section {
+        padding: 40px 25px 60px !important;
+    }
+
+    #leftBox .content article .article-meta {
+        padding: 15px 30px !important;
+    }
+
+    #leftBox .content article .article-meta span {
+        padding-right: 2em;
+    }
+}
+
+@media (max-width: 850px) {
+    #container {
+        margin-top: 0px;
+        width: 90%;
+    }
+
+    #leftBox {
+        width: 100%;
+    }
+
+    #rightBox {
+        display: none;
+    }
+
+    #mobileMenuBtn {
+        visibility: visible !important;
+    }
+}
