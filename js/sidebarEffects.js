@@ -1,19 +1,14 @@
 var SidebarMenuEffects = (function () {
 
-
     document.addEventListener('touchstart', touchSatrtFunc, false);
     document.addEventListener('touchmove', touchMoveFunc, false);
-    //全局变量，触摸开始位置
-    var startX = 0, startY = 0;
-    var isMobileCheck = mobilecheck();
 
-    var effect = 'st-effect-3';
+    var effect = "st-effect-3";
     var container = document.getElementById('st-container');
-    var eventtype = isMobileCheck ? 'touchstart' : 'click';
+    var eventtype = mobilecheck() ? 'touchstart' : 'click';
 
     function hasParentClass(e, classname) {
         if (e === document) return false;
-
         if (classie.has(e, classname)) {
             return true;
         }
@@ -28,38 +23,43 @@ var SidebarMenuEffects = (function () {
         })(navigator.userAgent || navigator.vendor || window.opera);
         return check;
     }
-
-    function openMenu(evt){
-        evt.stopPropagation();
-        evt.preventDefault();
-        container.className = 'st-container'; // clear
-        classie.add(container, effect);
-        classie.add(container, 'st-menu-open');
-        document.addEventListener(eventtype, closeMenu);
-
-    }
-
     function resetMenu(){
         classie.remove(container, 'st-menu-open');
-        document.ontouchstart = function () {
-            return true;
+    }
+    function bodyClickFn(evt){
+        if (!hasParentClass(evt.target, 'st-menu')) {
+            resetMenu();
+            document.removeEventListener(eventtype, bodyClickFn);
         }
     }
 
-    function closeMenu(evt){
-        document.removeEventListener(eventtype, closeMenu);
-        if (!hasParentClass(evt.target, 'st-menu')) {
-            resetMenu();
-            document.removeEventListener(eventtype, closeMenu);
-        }
+    function openMenu(ev){
+        ev.stopPropagation();
+        ev.preventDefault();
+        container.className = 'st-container'; // clear
+        classie.add(container, effect);
+        setTimeout(function () {
+            classie.add(container, 'st-menu-open');
+        }, 25);
+        document.addEventListener(eventtype, bodyClickFn);
     }
 
     function init() {
+
         var buttons = Array.prototype.slice.call(document.querySelectorAll('#st-trigger-effects > button'));
-        buttons[0].addEventListener(eventtype, openMenu, false);
+        // event type (if mobile use touch events)
+
+        buttons.forEach(function (el, i) {
+
+            el.addEventListener(eventtype, function (ev) {
+                openMenu(ev);
+            });
+        });
+
     }
 
     init();
+
 
     //touchstart事件
     function touchSatrtFunc(evt) {
@@ -87,7 +87,12 @@ var SidebarMenuEffects = (function () {
             var y = Number(touch.pageY); //页面触点Y坐标x
             //判断滑动方向
             if (x > startX && (x - startX > 120)) {
-                openMenu(evt);
+                container.className = 'st-container'; // clear
+                classie.add(container, effect);
+                setTimeout(function () {
+                    classie.add(container, 'st-menu-open');
+                }, 25);
+                document.addEventListener(eventtype, bodyClickFn);
             }
         }
         catch (e) {
@@ -95,8 +100,6 @@ var SidebarMenuEffects = (function () {
         }
     }
 
-
 })();
-
 
 
