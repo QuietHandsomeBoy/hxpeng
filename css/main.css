@@ -61,7 +61,7 @@ input::-moz-focus-inner {
 }
 
 ::selection {
-    background-color: #32e3ca;
+    background-color: #7D7D7D;
     color: #fff;
 }
 
@@ -143,6 +143,10 @@ body {
     padding: 15px 60px;
 }
 
+#leftBox .content article .article-meta .article_meta_tags a{
+    display: inline;
+}
+
 #leftBox .content article .article-meta span {
     padding-right: 40px;
     float: left;
@@ -151,7 +155,7 @@ body {
 }
 
 #leftBox .content article .article-meta span i {
-    padding-right: 5px;
+    /*padding-left: 5px;*/
 }
 
 #leftBox .content article .article-meta span a {
@@ -164,10 +168,10 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-#leftBox .content article .article-meta span a:hover {
-    color: #13C4A5;
-    text-decoration: none;
-}
+/*#leftBox .content article .article-meta span a:hover {*/
+    /*color: #13C4A5;*/
+    /*text-decoration: none;*/
+/*}*/
 
 #rightBox {
     width: 32%;
@@ -520,7 +524,8 @@ body {
     }
 
     #leftBox .content article .article-meta span {
-        padding-right: 2em;
+        font-size: 1em;
+        padding-right: 0.1em;
     }
 }
 
