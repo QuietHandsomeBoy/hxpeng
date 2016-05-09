@@ -339,6 +339,18 @@ body {
 .childMenu a:hover {
 }
 
+
+.tags_box{
+    overflow: hidden;
+}
+.tags_box ul li{
+    float: left;
+    margin: 0px 15px 5px 0px;
+    padding: 5px 15px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+
 .recent_posts_box, .recent_comments_box {
     margin-top: 15px;
 }
@@ -375,11 +387,11 @@ body {
     color: rgba(12, 20, 45, 0.75);
 }
 .comment-info_button{
-    padding: 5% 10%;
+    padding: 10% 10%;
 }
 @media (max-width: 1065px) {
     .comment-info_button{
-        padding: 5%;
+        padding: 10% 5%;
     }
 }
 .recent_comments_box .comment-info_button button {
@@ -413,6 +425,34 @@ body {
 
 .recent_comments_box .comment-info_button button:hover {
     opacity: .85;
+}
+
+#backTop_box{
+    position: fixed;
+    display: none;
+    z-index: 999;
+    width: 48px;
+    height: 48px;
+    right: 40px;
+    bottom: 80px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    box-shadow: 0px 1px 6px 2.5px rgba(0, 0, 0, 0.35), 0px 0px 52px 10px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    -webkit-transition: background 500ms;
+    -moz-transition: background 500ms;
+    -ms-transition: background 500ms;
+    -o-transition: background 500ms;
+    transition: background 500ms;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+#backTop_box:hover{
+    background: rgba(255, 255, 255, 0.8);
+}
+#rocket{
+    margin: 6px auto;
+    display: block;
 }
 
 /*滑动条*/
@@ -498,25 +538,11 @@ body {
         display: none;
     }
 
+    #backTop_box {
+        display: none!important;
+    }
+
     #mobileMenuBtn {
         visibility: visible !important;
     }
-}
-
-
-
-@keyframes fade-in {
-    0% {opacity: 0;}/*初始状态 透明度为0*/
-    40% {opacity: 0;}/*过渡状态 透明度为0*/
-    100% {opacity: 1;}/*结束状态 透明度为1*/
-}
-@-webkit-keyframes fade-in {/*针对webkit内核*/
-    0% {opacity: 0;}
-    40% {opacity: 0;}
-    100% {opacity: 1;}
-}
-body {
-    animation: fade-in;/*动画名称*/
-    animation-duration: 0.5s;/*动画持续时间*/
-    -webkit-animation:fade-in 0.5s;/*针对webkit内核*/
 }

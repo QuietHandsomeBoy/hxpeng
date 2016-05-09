@@ -1,133 +1,44 @@
-<!-- HTML5 -->
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>TouchEvent测试</title>
-    <meta charset="gbk">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>鏃犳爣棰樻枃妗�</title>
+    <style>
+        .div{
+            width:100%;
+            height:50px;
+            margin:150px 0px;
+        }
+        .toTop{
+            width:50px;
+            height:50px;
+            margin:0px auto;
+            border-radius:50px;
+            background:#717171;
+            cursor:pointer;}
+        .toTopSvg{
+            width:32px;
+            height:32px;
+            margin:9px;}
+        .toTop:hover{
+            background:#DBDBDB}
+        .toTop:hover .tt{
+            fill:#000}
+    </style>
 </head>
-<body>
-<h2>TouchEvent测试</h2>
-<br />
-<div id="version" style="border:2px solid black;background-color:yellow"></div>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<div id="result" style="border:2px solid red; color:red;">未触发事件！</div>
-<div id="test" style="border:2px solid red">
-    <ul>
-        <li id="li1">测试条目1</li>
-        <li id="li2">测试条目2</li>
-        <li id="li3">测试条目3</li>
-        <li id="li4">测试条目4</li>
-        <li id="li5">测试条目5</li>
-        <li id="li6">测试条目6</li>
-        <li id="li7">测试条目7</li>
-        <li id="li8">测试条目8</li>
-        <li id="li9">测试条目9</li>
-        <li id="li10">测试条目10</li>
-        <li id="li11">测试条目11</li>
-        <li id="li12">测试条目12</li>
-        <li id="li13">测试条目13</li>
-        <li id="li14">测试条目14</li>
-        <li id="li15">测试条目15</li>
-        <li id="li16">测试条目16</li>
-        <li id="li17">测试条目17</li>
-        <li id="li18">测试条目18</li>
-        <li id="li19">测试条目19</li>
-        <li id="li20">测试条目20</li>
-    </ul>
+
+<body bgcolor="#000000">
+<div class="div">
+    <div class="toTop">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class = "toTopSvg"  viewbox="0 0 64 64">
+            <path fill="#fff" d="M42.057,37.732c0,0,4.139-25.58-9.78-36.207c-0.307-0.233-0.573-0.322-0.802-0.329
+            c-0.227,0.002-0.493,0.083-0.796,0.311c-13.676,10.31-8.95,35.992-8.95,35.992c-10.18,8-7.703,9.151-1.894,23.262
+            c1.108,2.693,3.048,2.06,3.926,0.115c0.877-1.943,2.815-6.232,2.815-6.232l11.029,0.128c0,0,2.035,4.334,2.959,6.298
+            c0.922,1.965,2.877,2.644,3.924-0.024C49.974,47.064,52.423,45.969,42.057,37.732z M31.726,23.155
+            c-2.546-0.03-4.633-2.118-4.664-4.665c-0.029-2.547,2.012-4.587,4.559-4.558c2.546,0.029,4.634,2.117,4.663,4.664
+            C36.314,21.143,34.272,23.184,31.726,23.155z" class="tt"/>
+        </svg>
+    </div>
 </div>
-
-<script type="text/javascript">
-    //全局变量，触摸开始位置
-    var startX = 0, startY = 0;
-
-    //touchstart事件
-    function touchSatrtFunc(evt) {
-        try
-        {
-            //evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
-
-            var touch = evt.touches[0]; //获取第一个触点
-            var x = Number(touch.pageX); //页面触点X坐标
-            var y = Number(touch.pageY); //页面触点Y坐标
-            //记录触点初始位置
-            startX = x;
-            startY = y;
-
-            var text = 'TouchStart事件触发：（' + x + ', ' + y + '）';
-            document.getElementById("result").innerHTML = text;
-        }
-        catch (e) {
-            alert('touchSatrtFunc：' + e.message);
-        }
-    }
-
-    //touchmove事件，这个事件无法获取坐标
-    function touchMoveFunc(evt) {
-        try
-        {
-            //evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
-            var touch = evt.touches[0]; //获取第一个触点
-            var x = Number(touch.pageX); //页面触点X坐标
-            var y = Number(touch.pageY); //页面触点Y坐标
-
-            var text = 'TouchMove事件触发：（' + x + ', ' + y + '）';
-
-            //判断滑动方向
-            if (x - startX != 0) {
-                text += '<br/>左右滑动';
-            }
-            if (y - startY != 0) {
-                text += '<br/>上下滑动';
-            }
-
-            document.getElementById("result").innerHTML = text;
-        }
-        catch (e) {
-            alert('touchMoveFunc：' + e.message);
-        }
-    }
-
-    //touchend事件
-    function touchEndFunc(evt) {
-        try {
-            //evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
-
-            var text = 'TouchEnd事件触发';
-            document.getElementById("result").innerHTML = text;
-        }
-        catch (e) {
-            alert('touchEndFunc：' + e.message);
-        }
-    }
-
-    //绑定事件
-    function bindEvent() {
-        document.addEventListener('touchstart', touchSatrtFunc, false);
-        document.addEventListener('touchmove', touchMoveFunc, false);
-        document.addEventListener('touchend', touchEndFunc, false);
-    }
-
-    //判断是否支持触摸事件
-    function isTouchDevice() {
-        document.getElementById("version").innerHTML = navigator.appVersion;
-
-        try {
-            document.createEvent("TouchEvent");
-            alert("支持TouchEvent事件！");
-
-            bindEvent(); //绑定事件
-        }
-        catch (e) {
-            alert("不支持TouchEvent事件！" + e.message);
-        }
-    }
-
-    window.onload = isTouchDevice;
-</script>
 </body>
 </html>
