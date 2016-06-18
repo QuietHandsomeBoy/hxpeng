@@ -81,6 +81,135 @@ body {
     clear: both;
 }
 
+/*login.css        =================start*/
+#loginBox {
+    border: 1px solid #ccc;
+    width: 30%;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+    padding: 2rem 0;
+}
+#loginBox nav {
+    overflow: auto;
+    padding: 0 1rem 1.5rem;
+}
+#loginBox nav a{
+    display: block;
+    color: #2d3e50;
+    width: 100%;
+    font-weight:bold;
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+#loginBox nav a.active{
+    background: #ffffff;
+}
+#loginBox .inputsBox{
+    overflow: auto;
+    border-bottom: 1px solid #E5E5E5;
+}
+#loginBox .inputsBox .input{
+    display: block;
+    position: relative;
+    float: left;
+    background-color: #FFF;
+    border-radius: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#loginBox .inputsBox .input input{
+    padding: 1.2rem;
+    border: 0px;
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    -webkit-transition: background-color .4s;
+    transition: background-color .4s;
+}
+#loginBox .inputsBox .input input:focus{
+    background-color: #444;
+    color: #FFFFFF;
+}
+#loginBox .submitBtnBox{
+    padding: 0px 1.35rem;
+    margin-top: 2rem;
+    overflow: auto;
+
+}
+#loginBox .submitBtnBox .button-container{
+    float: right;
+}
+
+#loginBox .submitBtnBox .button-container button {
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    background: 0;
+    width: 11rem;
+    border: 0px;
+    padding: 1.25rem 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    /* line-height: 1; */
+    /* text-transform: uppercase; */
+    overflow: hidden;
+    -webkit-transition: .3s ease;
+    transition: .3s ease
+}
+
+#loginBox .submitBtnBox .button-container button span {
+    position: relative;
+    z-index: 1;
+    color: #2d3e50;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+#loginBox .submitBtnBox .button-container button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    background: rgba(33, 45, 74, 0.84);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+#loginBox .submitBtnBox .button-container button:hover, #loginBox .submitBtnBox .button-container button:active, #loginBox .submitBtnBox .button-container button:focus {
+    border-color: rgba(33, 45, 74, 0.84);
+}
+#loginBox .submitBtnBox .button-container button:hover span, #loginBox .submitBtnBox .button-container button:active span, #loginBox .submitBtnBox .button-container button:focus span {
+    color: rgba(33, 45, 74, 0.84);
+}
+#loginBox .submitBtnBox .button-container button:active span, #loginBox .submitBtnBox .button-container button:focus span, #loginBox .submitBtnBox .button-container button:hover span {
+    color: #ffffff;
+}
+#loginBox .submitBtnBox .button-container button:active:before, #loginBox .submitBtnBox .button-container button:focus:before, #loginBox .submitBtnBox .button-container button:hover:before {
+    opacity: 1;
+    -webkit-transform: scale(10);
+    transform: scale(10);
+}
+
+#loginBox .forgatPasswordHref{
+    float: left;
+    line-height: 4rem;
+    font-size: 0.75rem;
+}
+#loginBox .forgatPasswordHref a:hover{
+    text-decoration: underline;
+}
+
+/*login.css        =================end*/
+
+
 /*container start*/
 #container {
     width: 75%;
@@ -527,7 +656,9 @@ body {
     body {
         font-size: 55.5%;
     }
-
+    #loginBox {
+        width: 70%;
+    }
     #container {
         width: 95%;
     }
@@ -554,6 +685,35 @@ body {
         margin-top: 0px;
         width: 90%;
     }
+    #loginBox {
+        width: 90%;
+    }
+    #loginBox nav a {
+        font-size: .75rem;
+    }
+    #loginBox .inputsBox .input input {
+        padding: .7rem;
+        font-size: 0.7rem;
+    }
+    #loginBox .submitBtnBox{
+        padding: 0 0.7rem;
+        margin-top: 1rem;
+    }
+    #loginBox .forgatPasswordHref{
+        font-size: 0.7rem;
+    }
+    #loginBox .submitBtnBox .button-container button{
+        background: rgba(33, 45, 74, 1);
+        width: 8rem;
+        border: 0px;
+        padding: 1rem 0;
+        font-size: 1.rem;
+    }
+    #loginBox .submitBtnBox .button-container button span{
+        color: #FFFFFF;
+    }
+
+
 
     #leftBox {
         width: 100%;
