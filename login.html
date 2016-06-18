@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="images/resizeApi.png">
+    <meta name="viewport"
+          content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+</head>
+<script>
+    $(function () {
+
+        $(window).resize(function(){
+            var leftPX = ($(window).width() - $('#loginBox').outerWidth()) / 2;
+            var topPX = ($(window).height() - $('#loginBox').outerHeight()) / 2 + $(document).scrollTop();
+
+
+            if(topPX < 70){
+                topPX = 70;
+            }
+            $('#loginBox').css({
+                position: 'absolute',
+                left: leftPX,
+                top: topPX
+            });
+        });
+        $(window).resize();
+
+        $("#test").click(function(){
+            $(".loadingbox").addClass("loadingbox_test");
+        })
+    })
+</script>
+<style>
+    body{
+        overflow-y:scroll;
+        box-shadow: 0px 0px 100px black inset;
+    }
+    .loadingbox{
+        width: 100%;height: 100%; position: absolute; z-index: 999;z-index:-1;opacity: 0;
+        -moz-transition: all ease-in-out 0.5s;
+        -webkit-transition: all ease-in-out 0.5s;
+        -o-transition: all ease-in-out 0.5s;
+        transition: all ease-in-out 0.5s;
+    }
+    .loadingbox_test{
+        opacity: 1;
+        z-index: 99;
+    }
+    #loading{
+        background-color: rgba(0, 0, 0, 0.69);
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        margin-top: 0px;
+        top: 0px;
+    }
+    #loading-center{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    #loading-center-absolute {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 20px;
+        width: 100px;
+        margin-top: -10px;
+        margin-left: -50px;
+
+    }
+    .object{
+        width: 20px;
+        height: 20px;
+        background-color: #FFF;
+        -moz-border-radius: 50% 50% 50% 50%;
+        -webkit-border-radius: 50% 50% 50% 50%;
+        border-radius: 50% 50% 50% 50%;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        position: absolute;
+    }
+    #object_one{
+        -webkit-animation: object 2s linear infinite;
+        animation: object 2s linear infinite;
+    }
+    #object_two{
+        -webkit-animation: object 2s linear infinite -.4s;
+        animation: object 2s linear infinite -.4s;
+    }
+    #object_three{
+        -webkit-animation: object 2s linear infinite -.8s;
+        animation: object 2s linear infinite -.8s;
+    }
+    #object_four{
+        -webkit-animation: object 2s linear infinite -1.2s;
+        animation: object 2s linear infinite -1.2s;
+    }
+    #object_five{
+        -webkit-animation: object 2s linear infinite -1.6s;
+        animation: object 2s linear infinite -1.6s;
+    }
+    @-webkit-keyframes object{
+        0% { left: 100px; top:0}
+        80% { left: 0; top:0;}
+        85% { left: 0; top: -20px; width: 20px; height: 20px;}
+        90% { width: 40px; height: 15px; }
+        95% { left: 100px; top: -20px; width: 20px; height: 20px;}
+        100% { left: 100px; top:0; }
+
+    }
+    @keyframes object{
+        0% { left: 100px; top:0}
+        80% { left: 0; top:0;}
+        85% { left: 0; top: -20px; width: 20px; height: 20px;}
+        90% { width: 40px; height: 15px; }
+        95% { left: 100px; top: -20px; width: 20px; height: 20px;}
+        100% { left: 100px; top:0; }
+    }
+</style>
+<body>
+<div id="loginContentBox">
+    <div id="loginBox">
+        <div class="loadingbox">
+            <div id="loading">
+                <div id="loading-center">
+                    <div id="loading-center-absolute">
+                        <div class="object" id="object_one"></div>
+                        <div class="object" id="object_two"></div>
+                        <div class="object" id="object_three"></div>
+                        <div class="object" id="object_four"></div>
+                        <div class="object" id="object_five"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding: 2rem 0;">
+            <nav>
+                <a style="float: left;" class="active">Welcome<br/>please login to you account .</a>
+            </nav>
+            <div style="overflow: auto;">
+                <form accept-charset="utf-8" action="#" class="simform">
+                    <div class="inputsBox"></div>
+                    <div class="inputsBox">
+                        <div class="input">
+                            <input class="string optional" maxlength="255" id="user-email" placeholder="Email" type="email" size="50" required="required">
+                        </div>
+                    </div>
+                    <div class="inputsBox">
+                        <div class="input full">
+                            <input class="string optional" maxlength="255" id="user-pw" placeholder="Password" type="password" size="50" required="required">
+                        </div>
+                    </div>
+                    <div class="submitBtnBox">
+                        <div class="forgatPasswordHref">
+                            <a href="javascript:;" id="test">Forgot your password?</a>
+                        </div>
+                        <div class="button-container">
+                            <button><span>Sign in</span></button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
