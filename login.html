@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="icon" type="image/png" href="images/resizeApi.png">
-    <meta name="viewport"
-          content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/plugins.js"></script>
+
     <link type="text/css" rel="stylesheet" href="css/main.css">
 </head>
 <script>
@@ -15,7 +16,6 @@
         $(window).resize(function(){
             var leftPX = ($(window).width() - $('#loginBox').outerWidth()) / 2;
             var topPX = ($(window).height() - $('#loginBox').outerHeight()) / 2 + $(document).scrollTop();
-
 
             if(topPX < 70){
                 topPX = 70;
@@ -28,100 +28,35 @@
         });
         $(window).resize();
 
-        $("#test").click(function(){
-            $(".loadingbox").addClass("loadingbox_test");
-        })
+//        $("#test").click(function(){
+//            $(".loadingbox").addClass("loadingbox_test");
+//        })
+        $(document).pjax("a", "#loginContentBox")
+                .on("pjax:timeout", function(event) {
+                    event.preventDefault()
+                })
+                .on("pjax:start", function() {
+                    $(".loadingbox").addClass("loadingbox_test");
+                })
+                .on("pjax:send", function() {
+                    NProgress.start();
+                    $("#loginContent").fadeTo(500, 0);
+                })
+                .on("pjax:success", function() {
+                    alert("嘻嘻");
+                    setTimeout(function(){NProgress.done();$(".loadingbox").removeClass("loadingbox_test");},500);
+                })
+                .on("pjax:end", function() {
+                    alert("嘻嘻");
+                    setTimeout(function(){NProgress.done();$(".loadingbox").removeClass("loadingbox_test");},5000);
+                })
+//                .on("click", ".forgatPasswordHref", function(e){
+//                    alert("test");
+//                })
+
     })
 </script>
-<style>
-    body{
-        overflow-y:scroll;
-        box-shadow: 0px 0px 100px black inset;
-    }
-    .loadingbox{
-        width: 100%;height: 100%; position: absolute; z-index: 999;z-index:-1;opacity: 0;
-        -moz-transition: all ease-in-out 0.5s;
-        -webkit-transition: all ease-in-out 0.5s;
-        -o-transition: all ease-in-out 0.5s;
-        transition: all ease-in-out 0.5s;
-    }
-    .loadingbox_test{
-        opacity: 1;
-        z-index: 99;
-    }
-    #loading{
-        background-color: rgba(0, 0, 0, 0.69);
-        height: 100%;
-        width: 100%;
-        z-index: 1;
-        margin-top: 0px;
-        top: 0px;
-    }
-    #loading-center{
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-    #loading-center-absolute {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        height: 20px;
-        width: 100px;
-        margin-top: -10px;
-        margin-left: -50px;
-
-    }
-    .object{
-        width: 20px;
-        height: 20px;
-        background-color: #FFF;
-        -moz-border-radius: 50% 50% 50% 50%;
-        -webkit-border-radius: 50% 50% 50% 50%;
-        border-radius: 50% 50% 50% 50%;
-        margin-right: 20px;
-        margin-bottom: 20px;
-        position: absolute;
-    }
-    #object_one{
-        -webkit-animation: object 2s linear infinite;
-        animation: object 2s linear infinite;
-    }
-    #object_two{
-        -webkit-animation: object 2s linear infinite -.4s;
-        animation: object 2s linear infinite -.4s;
-    }
-    #object_three{
-        -webkit-animation: object 2s linear infinite -.8s;
-        animation: object 2s linear infinite -.8s;
-    }
-    #object_four{
-        -webkit-animation: object 2s linear infinite -1.2s;
-        animation: object 2s linear infinite -1.2s;
-    }
-    #object_five{
-        -webkit-animation: object 2s linear infinite -1.6s;
-        animation: object 2s linear infinite -1.6s;
-    }
-    @-webkit-keyframes object{
-        0% { left: 100px; top:0}
-        80% { left: 0; top:0;}
-        85% { left: 0; top: -20px; width: 20px; height: 20px;}
-        90% { width: 40px; height: 15px; }
-        95% { left: 100px; top: -20px; width: 20px; height: 20px;}
-        100% { left: 100px; top:0; }
-
-    }
-    @keyframes object{
-        0% { left: 100px; top:0}
-        80% { left: 0; top:0;}
-        85% { left: 0; top: -20px; width: 20px; height: 20px;}
-        90% { width: 40px; height: 15px; }
-        95% { left: 100px; top: -20px; width: 20px; height: 20px;}
-        100% { left: 100px; top:0; }
-    }
-</style>
-<body>
+<body style="overflow-y:scroll;box-shadow: 0px 0px 100px black inset;">
 <div id="loginContentBox">
     <div id="loginBox">
         <div class="loadingbox">
@@ -137,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div style="padding: 2rem 0;">
+        <div id="loginContent" style="padding: 2rem 0;">
             <nav>
                 <a style="float: left;" class="active">Welcome<br/>please login to you account .</a>
             </nav>
@@ -156,7 +91,7 @@
                     </div>
                     <div class="submitBtnBox">
                         <div class="forgatPasswordHref">
-                            <a href="javascript:;" id="test">Forgot your password?</a>
+                            <a href="index.html" id="test">Forgot your password?</a>
                         </div>
                         <div class="button-container">
                             <button><span>Sign in</span></button>
