@@ -89,26 +89,31 @@ body {
     border-radius: 5px;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
 }
+
 #loginBox nav {
     overflow: auto;
     padding: 0 1rem 1.5rem;
 }
-#loginBox nav a{
+
+#loginBox nav a {
     display: block;
     color: #777777;
     width: 100%;
-    font-weight:bold;
+    font-weight: bold;
     font-size: 1.6rem;
     line-height: 2rem;
 }
-#loginBox nav a.active{
+
+#loginBox nav a.active {
     background: #ffffff;
 }
-#loginBox .inputsBox{
+
+#loginBox .inputsBox {
     overflow: auto;
     border-bottom: 1px solid #E5E5E5;
 }
-#loginBox .inputsBox .input{
+
+#loginBox .inputsBox .input {
     display: block;
     position: relative;
     float: left;
@@ -120,7 +125,8 @@ body {
     -moz-appearance: none;
     appearance: none;
 }
-#loginBox .inputsBox .input input{
+
+#loginBox .inputsBox .input input {
     padding: 1.2rem;
     border: 0px;
     width: 100%;
@@ -129,17 +135,20 @@ body {
     -webkit-transition: background-color .4s;
     transition: background-color .4s;
 }
-#loginBox .inputsBox .input input:focus{
+
+#loginBox .inputsBox .input input:focus {
     background-color: #444;
     color: #FFFFFF;
 }
-#loginBox .submitBtnBox{
+
+#loginBox .submitBtnBox {
     padding: 0px 1.35rem;
     margin-top: 2rem;
     overflow: auto;
 
 }
-#loginBox .submitBtnBox .button-container{
+
+#loginBox .submitBtnBox .button-container {
     float: right;
 }
 
@@ -168,6 +177,7 @@ body {
     -webkit-transition: .3s ease;
     transition: .3s ease;
 }
+
 #loginBox .submitBtnBox .button-container button:before {
     content: '';
     position: absolute;
@@ -183,32 +193,36 @@ body {
     -webkit-transition: .3s ease;
     transition: .3s ease;
 }
+
 #loginBox .submitBtnBox .button-container button:hover, #loginBox .submitBtnBox .button-container button:active, #loginBox .submitBtnBox .button-container button:focus {
     border-color: rgba(33, 45, 74, 0.84);
 }
+
 #loginBox .submitBtnBox .button-container button:hover span, #loginBox .submitBtnBox .button-container button:active span, #loginBox .submitBtnBox .button-container button:focus span {
     color: rgba(33, 45, 74, 0.84);
 }
+
 #loginBox .submitBtnBox .button-container button:active span, #loginBox .submitBtnBox .button-container button:focus span, #loginBox .submitBtnBox .button-container button:hover span {
     color: #ffffff;
 }
+
 #loginBox .submitBtnBox .button-container button:active:before, #loginBox .submitBtnBox .button-container button:focus:before, #loginBox .submitBtnBox .button-container button:hover:before {
     opacity: 1;
     -webkit-transform: scale(10);
     transform: scale(10);
 }
 
-#loginBox .forgatPasswordHref{
+#loginBox .forgatPasswordHref {
     float: left;
     line-height: 4rem;
     font-size: 0.8rem;
 }
-#loginBox .forgatPasswordHref a:hover{
+
+#loginBox .forgatPasswordHref a:hover {
     text-decoration: underline;
 }
 
 /*login.css        =================end*/
-
 
 /*container start*/
 #container {
@@ -219,7 +233,12 @@ body {
 }
 
 #leftBox, #rightBox {
+    display: block;
+    position: relative;
     min-height: 400px;
+    -webkit-transition: all 500ms;
+    -o-transition: 500ms;
+    transition: 500ms;
 }
 
 #leftBox {
@@ -291,10 +310,12 @@ body {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-#leftBox .content article .article-info .readArticle{
+
+#leftBox .content article .article-info .readArticle {
     padding: 2.5em 0 0;
 }
-#leftBox .content article .article-info .readArticle a{
+
+#leftBox .content article .article-info .readArticle a {
     display: inline-block;
     padding: 15px 18px;
     margin: 0;
@@ -313,13 +334,13 @@ body {
     transition: all 0.2s ease-in-out;
     -webkit-backface-visibility: hidden;
 }
-#leftBox .content article .article-info .readArticle a:hover{
+
+#leftBox .content article .article-info .readArticle a:hover {
     background-color: #837B77;
     color: #fff;
     text-decoration: none;
     -webkit-backface-visibility: hidden;
 }
-
 
 /*#leftBox .content article .article-meta span a:hover {*/
 /*color: #13C4A5;*/
@@ -332,7 +353,7 @@ body {
 }
 
 #rightBox section {
-    padding: 40px 40px 60px;
+    padding: 4rem 2.5rem 3.75rem;
     background-color: #fff;
 }
 
@@ -345,22 +366,24 @@ body {
     position: relative;
     display: block;
 }
-#rightBox section .searchBox label i{
+
+#rightBox section .searchBox label i {
     position: absolute;
     z-index: 1;
     line-height: 2.3rem;
     right: 0.8rem;
 
 }
+
 /*#rightBox section .searchBox label:before {*/
-    /*display: block;*/
-    /*font-family: FontAwesome;*/
-    /*text-decoration: inherit;*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*right: 15px;*/
-    /*line-height: 40px;*/
-    /*z-index: 1;*/
+/*display: block;*/
+/*font-family: FontAwesome;*/
+/*text-decoration: inherit;*/
+/*content: "";*/
+/*position: absolute;*/
+/*right: 15px;*/
+/*line-height: 40px;*/
+/*z-index: 1;*/
 /*}*/
 
 #rightBox section .searchBox label input[type="search"] {
@@ -416,6 +439,46 @@ body {
 #rightBox section .about-website-box .about-website-info p {
     margin: 0 0 13px;
     font-size: 0.95rem;
+}
+
+#rightBox .hideRigthBox {
+    position: absolute;
+    width: 100%;
+}
+
+.showBoxbefor {
+    -webkit-transform: translateX(100%);
+    -ms-transform: scale(0.2);
+    -o-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0;
+    -webkit-transition: all 500ms;
+    -o-transition: 500ms;
+    transition: 500ms;
+}
+
+.showBoxing {
+    -webkit-transform: translateX(0);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+#rightBox .hideRigthBox .hidelink {
+    display: block;
+    background: rgba(142, 140, 138, 0.53);
+    line-height: 3rem;
+    text-align: center;
+    color: #FFF;
+    cursor: pointer;
+    -webkit-transition: all ease-in-out .3s;
+    -o-transition: all ease-in-out .3s;
+    transition: all ease-in-out .3s;
+}
+
+#rightBox .hideRigthBox .hidelink:hover {
+    background: rgba(92, 95, 93, 1);
 }
 
 /** =======================
@@ -662,9 +725,11 @@ body {
     body {
         font-size: 55.5%;
     }
+
     #loginBox {
         width: 70%;
     }
+
     #container {
         width: 95%;
     }
@@ -691,38 +756,44 @@ body {
         margin-top: 0px;
         width: 90%;
     }
+
     #loginBox {
         width: 90%;
     }
+
     #loginBox nav a {
         font-size: .75rem;
     }
+
     #loginBox .inputsBox .input input {
         padding: .7rem;
         font-size: 0.7rem;
     }
-    #loginBox .submitBtnBox{
+
+    #loginBox .submitBtnBox {
         padding: 0 0.7rem;
         margin-top: 1rem;
     }
-    #loginBox .forgatPasswordHref{
+
+    #loginBox .forgatPasswordHref {
         font-size: 0.7rem;
     }
-    #loginBox .submitBtnBox .button-container button{
+
+    #loginBox .submitBtnBox .button-container button {
         background: rgba(33, 45, 74, 1);
         width: 8rem;
         border: 0px;
         padding: 1rem 0;
         font-size: 1rem;
     }
-    #loginBox .submitBtnBox .button-container button span{
+
+    #loginBox .submitBtnBox .button-container button span {
         color: #FFFFFF;
     }
 
-    #loginBox .forgatPasswordHref{
+    #loginBox .forgatPasswordHref {
         line-height: 3rem;
     }
-
 
     #leftBox {
         width: 100%;
@@ -731,15 +802,19 @@ body {
     #leftBox .content article .article-meta span {
         width: 100%;
     }
-    #leftBox .content article .article-info .readArticle a:hover{
+
+    #leftBox .content article .article-info .readArticle a:hover {
         transition: none;
     }
+
     #leftBox .content article .article-meta {
         padding: 5px 0 10px;
     }
-    #leftBox .content article .article-info .readArticle{
+
+    #leftBox .content article .article-info .readArticle {
         padding: 2.2em 0 0;
     }
+
     #rightBox {
         display: none;
     }
@@ -752,7 +827,6 @@ body {
         visibility: visible !important;
     }
 }
-
 
 /*==================================*/
 /* 顶部加载条样式-----start */
@@ -822,35 +896,49 @@ body {
 }
 
 @-webkit-keyframes nprogress-spinner {
-    0%   { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
+
 @keyframes nprogress-spinner {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /*==================================*/
 /* 顶部加载条样式-----end */
 /*==================================*/
 
-
-
 /*==================================*/
 /* loading-----start */
 /*==================================*/
-.loadingbox{
-    width: 100%;height: 100%; position: absolute; z-index: 999;z-index:-1;opacity: 0;
+.loadingbox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    z-index: -1;
+    opacity: 0;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
 }
-.loadingbox_test{
+
+.loadingbox_test {
     opacity: 1;
     z-index: 99;
 }
-#loading{
+
+#loading {
     background-color: rgba(0, 0, 0, 0.69);
     height: 100%;
     width: 100%;
@@ -858,11 +946,13 @@ body {
     margin-top: 0px;
     top: 0px;
 }
-#loading-center{
+
+#loading-center {
     width: 100%;
     height: 100%;
     position: relative;
 }
+
 #loading-center-absolute {
     position: absolute;
     left: 50%;
@@ -873,7 +963,8 @@ body {
     margin-left: -50px;
 
 }
-.object{
+
+.object {
     width: 20px;
     height: 20px;
     background-color: #FFF;
@@ -884,43 +975,95 @@ body {
     margin-bottom: 20px;
     position: absolute;
 }
-#object_one{
+
+#object_one {
     -webkit-animation: object 2s linear infinite;
     animation: object 2s linear infinite;
 }
-#object_two{
+
+#object_two {
     -webkit-animation: object 2s linear infinite -.4s;
     animation: object 2s linear infinite -.4s;
 }
-#object_three{
+
+#object_three {
     -webkit-animation: object 2s linear infinite -.8s;
     animation: object 2s linear infinite -.8s;
 }
-#object_four{
+
+#object_four {
     -webkit-animation: object 2s linear infinite -1.2s;
     animation: object 2s linear infinite -1.2s;
 }
-#object_five{
+
+#object_five {
     -webkit-animation: object 2s linear infinite -1.6s;
     animation: object 2s linear infinite -1.6s;
 }
-@-webkit-keyframes object{
-    0% { left: 100px; top:0}
-    80% { left: 0; top:0;}
-    85% { left: 0; top: -20px; width: 20px; height: 20px;}
-    90% { width: 40px; height: 15px; }
-    95% { left: 100px; top: -20px; width: 20px; height: 20px;}
-    100% { left: 100px; top:0; }
+
+@-webkit-keyframes object {
+    0% {
+        left: 100px;
+        top: 0
+    }
+    80% {
+        left: 0;
+        top: 0;
+    }
+    85% {
+        left: 0;
+        top: -20px;
+        width: 20px;
+        height: 20px;
+    }
+    90% {
+        width: 40px;
+        height: 15px;
+    }
+    95% {
+        left: 100px;
+        top: -20px;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        left: 100px;
+        top: 0;
+    }
 
 }
-@keyframes object{
-    0% { left: 100px; top:0}
-    80% { left: 0; top:0;}
-    85% { left: 0; top: -20px; width: 20px; height: 20px;}
-    90% { width: 40px; height: 15px; }
-    95% { left: 100px; top: -20px; width: 20px; height: 20px;}
-    100% { left: 100px; top:0; }
+
+@keyframes object {
+    0% {
+        left: 100px;
+        top: 0
+    }
+    80% {
+        left: 0;
+        top: 0;
+    }
+    85% {
+        left: 0;
+        top: -20px;
+        width: 20px;
+        height: 20px;
+    }
+    90% {
+        width: 40px;
+        height: 15px;
+    }
+    95% {
+        left: 100px;
+        top: -20px;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        left: 100px;
+        top: 0;
+    }
 }
+
 /*==================================*/
 /* loading-----start */
 /*==================================*/
