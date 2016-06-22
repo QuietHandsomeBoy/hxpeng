@@ -1,0 +1,50 @@
+/**
+ * Created by hxpeng on 2016/6/22.
+ */
+
+
+$(function () {
+
+    $('.aniview').AniView();
+    $(window).resize(function(){
+        var leftPX = ($(window).width() - $('#loginBox').outerWidth()) / 2;
+        var topPX = ($(window).height() - $('#loginBox').outerHeight()) / 2 + $(document).scrollTop();
+
+        if(topPX < 70){
+            topPX = 70;
+        }
+        $('#loginBox').css({
+            position: 'absolute',
+            left: leftPX,
+            top: topPX
+        });
+    });
+    $(window).resize();
+
+//        $("#test").click(function(){
+//            $(".loadingbox").addClass("loadingbox_test");
+//        })
+    $(document).pjax("a", "#loginContentBox")
+        .on("pjax:timeout", function(event) {
+            event.preventDefault()
+        })
+        .on("pjax:start", function() {
+            $(".loadingbox").addClass("loadingbox_test");
+        })
+        .on("pjax:send", function() {
+            NProgress.start();
+            $("#loginContent").fadeTo(500, 0);
+        })
+        .on("pjax:success", function() {
+            alert("嘻嘻");
+            setTimeout(function(){NProgress.done();$(".loadingbox").removeClass("loadingbox_test");},500);
+        })
+        .on("pjax:end", function() {
+            alert("嘻嘻");
+            setTimeout(function(){NProgress.done();$(".loadingbox").removeClass("loadingbox_test");},5000);
+        })
+//                .on("click", ".forgatPasswordHref", function(e){
+//                    alert("test");
+//                })
+
+})
