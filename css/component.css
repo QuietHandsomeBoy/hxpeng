@@ -1,6 +1,7 @@
 
 .st-content {
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .st-content,

@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="images/resizeApi.png">
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="css/main.css">
+    <link type="text/css" rel="stylesheet" href="css/animate.min.css">
     <link type="text/css" rel="stylesheet" href="css/component.css">
     <script src="js/jquery-1.11.3.js"></script>
     <title>MyBolg</title>
@@ -33,7 +34,7 @@
                 <div id="leftBox" class="leftBox">
                     <section>
                         <div id="content" class="content">
-                            <article>
+                            <article av-animation="fadeInUp" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
                                         <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
@@ -66,7 +67,7 @@
                                 </div>
                             </article>
 
-                            <article>
+                            <article av-animation="fadeInUp" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
                                         <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
@@ -99,7 +100,7 @@
                                 </div>
                             </article>
 
-                            <article>
+                            <article av-animation="fadeInUp" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
                                         <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
@@ -132,7 +133,7 @@
                                 </div>
                             </article>
 
-                            <article>
+                            <article av-animation="fadeInUp" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
                                         <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
@@ -165,7 +166,7 @@
                                 </div>
                             </article>
 
-                            <article>
+                            <article av-animation="fadeInUp" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
                                         <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
@@ -198,7 +199,7 @@
                                 </div>
                             </article>
 
-                            <article>
+                            <article av-animation="fadeInUp" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
                                         <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
@@ -231,7 +232,7 @@
                                 </div>
                             </article>
 
-                            <article>
+                            <article av-animation="fadeInUp" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
                                         <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
@@ -264,7 +265,7 @@
                                 </div>
                             </article>
 
-                            <article>
+                            <article av-animation="fadeInUp" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
                                         <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
@@ -306,7 +307,7 @@
 
                 </div>
 
-                <div id="rightBox" class="rightBox">
+                <div id="rightBox" class="rightBox aniview" av-animation="bounceInRight">
                     <section>
                         <div class="searchBox">
                             <form role="search" method="get" class="search-form" action="">
@@ -472,12 +473,8 @@
 </body>
 <script src="js/plugins.js"></script>
 <script src="js/common.js"></script>
+<script src="js/jquery.aniview.min.js"></script>
 <script>
-    $("#b-0").click(function () {
-        NProgress.start();
-    });
-    $("#b-100").click(function () {
-        NProgress.done();
-    });
+    $('.aniview').AniView();
 </script>
 </html>
