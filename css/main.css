@@ -22,7 +22,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: inherit;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -87,6 +87,7 @@ body {
     width: 30%;
     background: #ffffff;
     border-radius: 5px;
+	opacity: 0;
 }
 
 #loginContent {
@@ -263,7 +264,9 @@ body {
     outline: none;
     padding: 10px 0px;
 }
-
+#leftBox .content article,#rightBox{
+    opacity: 0;
+}
 #leftBox .content article, #rightBox section {
     background: #ffffff;
     display: block;
@@ -355,6 +358,7 @@ body {
 #rightBox {
     width: 32%;
     float: right;
+
 }
 
 #rightBox section {
@@ -451,24 +455,6 @@ body {
     width: 100%;
 }
 
-.showBoxbefor {
-    -webkit-transform: translateX(100%);
-    -ms-transform: scale(0.2);
-    -o-transform: scale(0.2);
-    transform: scale(0.2);
-    opacity: 0;
-    -webkit-transition: all 500ms;
-    -o-transition: 500ms;
-    transition: 500ms;
-}
-
-.showBoxing {
-    -webkit-transform: translateX(0);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-}
 
 #rightBox .hideRigthBox .hidelink {
     display: block;

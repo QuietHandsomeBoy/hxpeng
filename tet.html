@@ -1,49 +1,42 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
     <script src="js/jquery-1.11.3.js"></script>
-    <style>
-        #showDiv {
-            background-color:red;
-            width:300px;
-            height:300px;
-            display:none;
-        }
-        .from-below {
-            -webkit-transform: translateX(100%);
-            -ms-transform: scale(0.2);
-            -o-transform: scale(0.2);
-            transform: scale(0.2);
-            opacity: 0;
-            -webkit-transition: all 500ms;
-            -o-transition: 500ms;
-            transition: 500ms;
-        }
-        .effeckt-show {
-            -webkit-transform: translateX(0);
-            -ms-transform: scale(1);
-            -o-transform: scale(1);
-            transform: scale(1);
-            opacity: 1;
-        }
-        .effeckt-show .effeckt-modal {
-            visibility: visible;
-        }
-    </style>
+    <script src="js/jquery.pjax.js"></script>
     <script>
-        function show(){
-            $("#showDiv").show();
-            $("#showDiv").addClass("from-below");
-            setTimeout(function(){$("#showDiv").addClass("effeckt-show");},50);
+        $(function(){
+            $(document).pjax("li a", "#main", {fragment:'#main'})
+            $(document).pjax(selector, [container], options)
+        });
+        function closeCharBox(){
+            $(".test").css("height","600px");
+            //$(".content-char-info").attr("av-animation","bounceOutRight");
+            //$(".content-char-info").removeClass("fadeInRight").addClass("fadeOutRight");
+            //setTimeout(function(){$(".content-char-info").css("height","0px");},1000);
         }
-        function hide(){
-            $("#showDiv").removeClass("effeckt-show");
-        }
+
+        $(function(){
+            $.pjax({
+                selector: 'a',
+                container: '#container', //内容替换的容器
+                show: 'fade',  //展现的动画，支持默认和fade, 可以自定义动画方式，这里为自定义的function即可。
+                cache: true,  //是否使用缓存
+                storage: true,  //是否使用本地存储
+                titleSuffix: '', //标题后缀
+                filter: function(){},
+                callback: function(){}
+            })
+        });
     </script>
 </head>
-<body class="sapUiBody">
-<input type="button" id="bt" value="show" onClick="show()">
-<input type="button" id="bt" value="hide" onClick="hide()">
-<div id="showDiv" class="">
-    <h1>aaaaa</h1>
-</div>
+<body>
+<div id="container">
+    <a href="javascript:closeCharBox();">111</a>
+    <div class="test" style="height: 100px;background: #CCCCCC;transition: all ease-in-out .3s; width: 100%;"></div>
+    111111
+    <div class="test" style="height: 100px;background: #CCCCCC;transition: all ease-in-out .3s; width: 100%;"></div>
+</div>	<!-- /.container -->
 </body>
+</html>

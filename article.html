@@ -7,14 +7,18 @@
     <link rel="icon" type="image/png" href="images/resizeApi.png">
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="css/main.css">
+    <link type="text/css" rel="stylesheet" href="css/animate.min.css">
     <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/main.js"></script>
     <title>There is something in the New York air that makes sleep useless</title>
     <script>
         $(function(){
             $(".hidelink").click(function(){
-                $("#rightBox").removeClass("showBoxing");
+                $("#rightBox").attr("av-animation","bounceOutRight");
+                $("#rightBox").removeClass("bounceInRight").addClass("bounceOutRight");
+                setTimeout(function(){$("#leftBox").css("width","100%");},300);
                 setTimeout(function(){$("#rightBox").css("display","none");},500);
-                $("#leftBox").css("width","100%");
+
             })
         })
 
@@ -42,7 +46,7 @@
                 <div id="leftBox" class="leftBox">
                     <section>
                         <div id="content" class="content">
-                            <article>
+                            <article av-animation="fadeIn" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
                                         <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
@@ -55,7 +59,7 @@
                                             <div class="clear"></div>
                                         </div>
                                         <div class="article_about">
-                                                <p>介绍一下英国当代的纪实摄影。</p>
+                                            <p>介绍一下英国当代的纪实摄影。</p>
                                             <p>首先申明只是学摄影的弱犬，刚好这段时间在学习当代摄影，于是自己做一些功课，而知乎上又貌似在这块上存在空白，就全当分享个人学习体验。关于历史事件描述大多参考搜索结果，想了解更多相关内容请自行查找，其中对摄影师作品评说具有强烈的个人情感。不喜勿怪。</p>
                                             <p>为什么选用英国的 当代纪实摄影，是因为 在这个时期出现了 3 位英国的纪实摄影巨头，并且是注入了时代的新内容，可称之为“新纪实”，而他们的手法和内容又多有共通之处。</p>
                                             <p>要了解当代摄影，先简单看一下“纪实”摄影</p>
@@ -133,7 +137,7 @@
 
                 </div>
 
-                <div id="rightBox" class="rightBox showBoxbefor showBoxing">
+                <div id="rightBox" class="rightBox aniview" av-animation="bounceInRight">
                     <div class="hideRigthBox">
                         <a class="hidelink">隐藏右边栏目</a>
                     </div>
@@ -302,4 +306,7 @@
 </body>
 <script src="js/plugins.js"></script>
 <script src="js/common.js"></script>
+<script>
+    $('.aniview').AniView();
+</script>
 </html>

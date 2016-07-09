@@ -9,8 +9,13 @@
     <script src="js/plugins.js"></script>
     <link type="text/css" rel="stylesheet" href="css/animate.min.css">
     <link type="text/css" rel="stylesheet" href="css/main.css">
-    <script src="js/jquery.aniview.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $("form").submit(function(e){
+            e.preventDefault();
+            alert("Submit prevented");
+        });
+    </script>
 </head>
 <body style="overflow:hidden;box-shadow: 0px 0px 100px black inset;">
 <div id="st-content">
@@ -33,16 +38,16 @@
                 <a class="active">Welcome<br/>please login to you account .</a>
             </nav>
             <div style="overflow: auto;">
-                <form accept-charset="utf-8" action="#" class="simform">
+                <form accept-charset="utf-8" action="#" id="loginForm" class="simform">
                     <div class="inputsBox"></div>
                     <div class="inputsBox">
                         <div class="input">
-                            <input class="string optional" maxlength="255" id="user-email" placeholder="Email" type="email" size="50" required="required">
+                            <input autocomplete="off"  class="string optional" maxlength="255" id="user-email" placeholder="Email" type="email" size="50" required="required">
                         </div>
                     </div>
                     <div class="inputsBox">
                         <div class="input full">
-                            <input class="string optional" maxlength="255" id="user-pw" placeholder="Password" type="password" size="50" required="required">
+                            <input autocomplete="off"  class="string optional" maxlength="255" id="user-pw" placeholder="Password" type="password" size="50" required="required">
                         </div>
                     </div>
                     <div class="submitBtnBox">

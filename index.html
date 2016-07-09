@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link rel="icon" type="image/png" href="images/resizeApi.png">
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="css/main.css">
     <link type="text/css" rel="stylesheet" href="css/animate.min.css">
     <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/main.js"></script>
     <title>MyBolg</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
                             <article av-animation="fadeInUp" class="aniview">
                                 <div class="article-info">
                                     <div class="article-content">
-                                        <h2 class="article_title"><a href="javascript:;" rel="bookmark">There is
+                                        <h2 class="article_title"><a href="article.html" rel="bookmark">There is
                                             something
                                             in the New York air that makes sleep useless</a></h2>
                                         <div class="article-meta">
@@ -307,6 +308,9 @@
                 </div>
 
                 <div id="rightBox" class="rightBox aniview" av-animation="bounceInRight">
+                    <div class="hideRigthBox">
+                        <a class="hidelink">隐藏右边栏目</a>
+                    </div>
                     <section>
                         <div class="searchBox">
                             <form role="search" method="get" class="search-form" action="">
@@ -441,8 +445,6 @@
                                 </ul>
                             </div>
                             <div class="comment-info_button">
-                                <!--<button class='button play' id='b-0'></button>-->
-                                <!--<button class='button play' id='b-100'></button>-->
                                 <button style="float: left;">Read Comments</button>
                                 <button style="float: right;">Leave Comments</button>
                                 <div class="clear"></div>
