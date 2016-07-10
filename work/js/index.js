@@ -12,6 +12,13 @@ $(function () {
         $(this).addClass("active")
     })
 
+    $(function(){
+        $(document).pjax("a", "#content", {fragment:'#content'})
+            .on("pjax:end",function(){
+                $('#content .aniview').AniView();
+            })
+    });
+
 
     $('#bar-chart-container').highcharts({
         chart: {

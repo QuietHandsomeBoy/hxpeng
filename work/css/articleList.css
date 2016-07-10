@@ -1,0 +1,60 @@
+#left-box {
+    clear: both;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding: 0;
+}
+.left-box-content {
+    background: none;
+    border: none;
+    padding: 10px;
+    clear: both;
+}
+.folder-list{
+    margin-bottom: 20px;
+}
+.folder-list li {
+    border-bottom: 1px solid #e7eaec;
+    display: block;
+    margin: 10px 0px;
+}
+.folder-list li span{
+    background-color: #19a9d5;
+}
+.folder-list li a {
+    text-align: left;
+    display: block;
+    padding: 10px 5px;
+    background-color: inherit;
+    border: 1px solid #dee5e7;
+    color: #313030;
+    padding: 10px 20px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+.folder-list li a:hover {
+
+}
+.folder-list li i {
+    margin-right: 8px;
+    color: #3d4d5d;
+}
+.category-list li {
+    float: left;
+    list-style: none;
+}
+.category-list li label {
+    cursor: pointer;
+    font-size: 12px;
+    padding: 10px 25px;
+    color: inherit;
+    border-radius: 2px;
+    border: 1px solid #e7eaec;
+    margin-right: 5px;
+    margin-top: 5px;
+    display: block;
+    background: #ffffff;
+    line-height: 18px;
+}
+.category-list li a label{
+
+}
