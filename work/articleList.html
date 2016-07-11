@@ -8,6 +8,7 @@
     <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="../css/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="css/index.css">
+    <link type="text/css" rel="stylesheet" href="css/icheck/icheck.css">
     <link type="text/css" rel="stylesheet" href="css/articleList.css">
     <link type="text/css" rel="stylesheet" href="../css/animate.min.css">
     <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap-datetimepicker.min.css">
@@ -17,6 +18,7 @@
     <script src="js/highcharts.js"></script>
     <script src="js/bootstrap/bootstrap-datetimepicker.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/icheck.js"></script>
     <script src="js/jquery.aniview.min.js"></script>
     <title>MyBolg</title>
 </head>
@@ -41,7 +43,8 @@
                     <a href="layouts.html"><i class="fa fa-book"></i> <span class="nav-label">Article</span><span
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse" style="height: 0px;">
-                        <li><a href="articleList.html">笔记列表<span class="label label-warning pull-right">24</span></a></li>
+                        <li><a href="articleList.html">笔记列表<span class="label label-warning pull-right">24</span></a>
+                        </li>
                         <li><a href="javascript:;">草稿列表<span class="label label-warning pull-right">5</span></a></li>
                         <li><a href="javascript:;">写笔记</a></li>
                     </ul>
@@ -89,7 +92,8 @@
     </nav>
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
-            <nav class="navbar navbar-static-top aniview" av-animation="fadeInDown" style="margin-bottom: 0;opacity: 0;">
+            <nav class="navbar navbar-static-top aniview" av-animation="fadeInDown"
+                 style="margin-bottom: 0;opacity: 0;">
                 <div class="navbar-header">
                     <!--<a class="btn btn-primary minimalize-styl-2" href="#"><i class="fa fa-bars"></i> </a>-->
                     <span class="m-r-sm text-muted system-version">HXPENG Admin Version1.0</span>
@@ -157,48 +161,119 @@
             </ol>
         </div>
         <div id="content" class="content-container">
-            <div class="aniview" av-animation="fadeInUp" style="opacity: 0;">
+            <div>
                 <div class="row">
                     <div class="col-lg-3">
                         <div id="left-box">
                             <div class="left-box-content">
                                 <div class="file-manager">
-                                    <div class="space-25"></div>
+                                    <div class="search-box">
+                                        <a href="javascript:;" id="searchBtn">Search</a>
+                                    </div>
+                                    <h5>Title Like</h5>
+                                    <div class="form-group">
+                                        <input type='text' class="form-control"/>
+                                    </div>
                                     <h5>Folders</h5>
                                     <ul class="folder-list" style="padding: 0">
-                                        <li><a class="btn btn-block btn-default active" href="javascript:;">笔记<span class="label label-warning pull-right">16</span></a></li>
-                                        <li><a class="btn btn-block btn-default" href="javascript:;">日记<span class="label label-warning pull-right">28</span></a></li>
-                                        <li><a class="btn btn-block btn-default" href="javascript:;">其他<span class="label label-warning pull-right">19</span></a></li>
+                                        <li><input type="checkbox" class="i-checks"><label class="">笔记</label></li>
+                                        <li><input type="checkbox" class="i-checks"><label class="">日记</label></li>
+                                        <li><input type="checkbox" class="i-checks"><label class="">其他</label></li>
                                     </ul>
                                     <h5>Categories</h5>
-                                    <ul class="category-list" style="padding: 0">
-                                        <li>
-                                            <label class="checkbox"><input type="checkbox" value="">Work</label>
+                                    <ul class="category-list">
+                                        <li><label class=""><input type="checkbox" class="i-checks">Work</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Documents</label>
                                         </li>
-                                        <li>
-                                            <label class="checkbox"><input type="checkbox" value="">Documents</label>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Social</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Advertising</label>
                                         </li>
-                                        <li>
-                                            <label class="checkbox"><input type="checkbox" value="">Social</label>
-                                        </li>
-                                        <li>
-                                            <label class="checkbox"><input type="checkbox" value="">Advertising</label>
-                                        </li>
-                                        <li>
-                                            <label class="checkbox"><input type="checkbox" value="">Clients</label>
-                                        </li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Clients</label></li>
                                     </ul>
-                                    <input size="16" type="text" value="2012-06-15 14:45" readonly class="form_datetime form-control">
-                                    <script>
-                                        $(".form_datetime").datetimepicker({
-                                            autoclose: true,
-                                            todayBtn: true,
-                                            pickerPosition: "bottom-left"
-                                        });
-                                    </script>
+                                    <h5>Time Frame</h5>
+                                    <div class="form-group">
+                                        <span>startDate：</span>
+                                        <div class='input-group date'>
+                                            <input type='text' class="form-control" readonly/>
+                                            <span class="input-group-addon"><span
+                                                    class="glyphicon glyphicon-calendar"></span></span>
+                                        </div>
+                                        <span>endDate：</span>
+                                        <div class='input-group date'>
+                                            <input type='text' class="form-control" readonly/>
+                                            <span class="input-group-addon"><span
+                                                    class="glyphicon glyphicon-calendar"></span></span>
+                                        </div>
+                                    </div>
+                                    <h5>Others</h5>
+                                    <div class="other-condition form-group">
+                                        <label class="">
+                                            <input type="checkbox" class="i-checks">原创
+                                        </label>
+                                        <label class="">
+                                            <input type="checkbox" class="i-checks">转载
+                                        </label>
+                                        <label class="">
+                                            <input type="checkbox" class="i-checks">公开
+                                        </label>
+                                        <label class="">
+                                            <input type="checkbox" class="i-checks">置顶
+                                        </label>
+                                        <label class="">
+                                            <input type="checkbox" class="i-checks">限制评论
+                                        </label>
+                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="list-main-box animated fadeInRight">
+                            <div class="list-header-box">
+                                <h2> 全部 (16) </h2>
+                                <div class="list-pagination-box pull-right">
+                                    <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i></button>
+                                    <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i></button>
+                                </div>
+                                <div class="header-tool-box">
+                                    <button class="btn-white btn-sm"><i class="fa fa-refresh"></i> Refresh</button>
+                                    <button class="btn-white btn-sm"><i class="fa fa-edit"></i> Edit</button>
+                                    <button class="btn-white btn-sm"><i class="fa fa-trash"></i> Delete</button>
+                                    <button class="btn-white btn-sm"><i class="fa fa-level-up"></i> Top</button>
+                                </div>
+                            </div>
+                            <div class="list-content-box">
+                                <table class="table table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><label class="label label-biji pull-left">笔记</label><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td>Lorem ipsum dolor noretek imit set.</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><label class="label label-riji pull-left">日记</label><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td>Lorem ipsum dolor noretek imit set.</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><label class="label label-qita pull-left">其他</label><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td>Lorem ipsum dolor noretek imit set.</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
@@ -208,6 +283,10 @@
 </div>
 <script>
     $('.aniview').AniView();
+    $(".form-group .date").datetimepicker({
+        autoclose: true,
+        todayBtn: true
+    });
 </script>
 </body>
 </html>

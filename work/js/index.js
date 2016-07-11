@@ -11,13 +11,37 @@ $(function () {
         })
         $(this).addClass("active")
     })
-
-    $(function(){
-        $(document).pjax("a", "#content", {fragment:'#content'})
-            .on("pjax:end",function(){
-                $('#content .aniview').AniView();
-            })
+    $('.category-list .i-checks').iCheck({
+        checkboxClass: 'icheckbox_flat-blue'
     });
+    $('.other-condition .i-checks').iCheck({
+        checkboxClass: 'icheckbox_flat-orange'
+    });
+    $('.folder-list .i-checks').each(function(){
+        var self = $(this),
+            label = self.next(),
+            label_text = label.text();
+
+        label.remove();
+        self.iCheck({
+            checkboxClass: 'icheckbox_line-blue',
+            radioClass: 'icheckbox_line-blue',
+            insert: '<div class="icheck_line-icon"></div>' + label_text
+        });
+    });
+    $('.folder-list .i-checks').iCheck('check');
+
+    $('.list-content-box .i-checks').iCheck({
+        checkboxClass: 'icheckbox_square-green'
+    });
+
+
+
+
+    $(document).pjax("a", "#content", {fragment:'#content'})
+        .on("pjax:end",function(){
+            $('#content .aniview').AniView();
+        })
 
 
     $('#bar-chart-container').highcharts({
