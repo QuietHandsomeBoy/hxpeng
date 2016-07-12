@@ -5,44 +5,28 @@
 $(function () {
     setInterval(function(){$('#nowTime').html(currentTime)},1000);
     $('#side-menu').metisMenu();
-    $(".nav-second-level li").click(function(){
-        $(".nav-second-level li").each(function(){
-            $(this).removeClass("active");
+
+
+    $(document).pjax(".nav-second-level a", "#content", {fragment:'#content'})
+        .on("pjax:timeout", function (event) {
+            event.preventDefault()
         })
-        $(this).addClass("active")
-    })
-    $('.category-list .i-checks').iCheck({
-        checkboxClass: 'icheckbox_flat-blue'
-    });
-    $('.other-condition .i-checks').iCheck({
-        checkboxClass: 'icheckbox_flat-orange'
-    });
-    $('.folder-list .i-checks').each(function(){
-        var self = $(this),
-            label = self.next(),
-            label_text = label.text();
-
-        label.remove();
-        self.iCheck({
-            checkboxClass: 'icheckbox_line-blue',
-            radioClass: 'icheckbox_line-blue',
-            insert: '<div class="icheck_line-icon"></div>' + label_text
-        });
-    });
-    $('.folder-list .i-checks').iCheck('check');
-
-    $('.list-content-box .i-checks').iCheck({
-        checkboxClass: 'icheckbox_square-green'
-    });
-
-
-
-
-    $(document).pjax("a", "#content", {fragment:'#content'})
+        .on("click",".nav-second-level li",function(event){
+            var aactive = $(".nav-second-level .active");
+            if(aactive){
+                var activeobj = aactive.find("a");
+                activeobj.attr("href",activeobj.attr("data-a-href"));
+                aactive.removeClass("active");
+            }
+            if(!$(this).hasClass("active")){
+                var aobj = $(this).find("a");
+                $(this).addClass("active");
+                aobj.attr("data-a-href",aobj.attr("href"));
+                aobj.attr("href","javascript:;");
+            }
+        })
         .on("pjax:end",function(){
-            $('#content .aniview').AniView();
         })
-
 
     $('#bar-chart-container').highcharts({
         chart: {

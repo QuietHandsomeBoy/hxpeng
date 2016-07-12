@@ -8,8 +8,8 @@
     <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="../css/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="css/index.css">
+    <link type="text/css" rel="stylesheet" href="css/icheck/icheck.css">
     <link type="text/css" rel="stylesheet" href="css/articleList.css">
-    <link type="text/css" rel="stylesheet" href="css/icheck/orange.css">
     <link type="text/css" rel="stylesheet" href="../css/animate.min.css">
     <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap-datetimepicker.min.css">
     <script src="../js/jquery-1.11.3.js"></script>
@@ -25,7 +25,7 @@
 <body>
 <div id="myWorld">
     <nav class="left-menu">
-        <div class="sidebar-collapse aniview" av-animation="fadeInLeft" style="opacity:0;">
+        <div class="sidebar-collapse animated fadeInLeft">
             <div class="nav-header">
                 <div class="dropdown profile-element">
                     <span><img alt="image" class="img-circle" src="../images/head.png"></span>
@@ -43,8 +43,8 @@
                     <a href="layouts.html"><i class="fa fa-book"></i> <span class="nav-label">Article</span><span
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse" style="height: 0px;">
-                        <li><a href="articleList.html">笔记列表<span class="label label-warning pull-right">24</span></a></li>
-                        <li><a href="javascript:;">草稿列表<span class="label label-warning pull-right">5</span></a></li>
+                        <li><a data-a-href="" href="articleList.html">笔记列表<span class="label label-warning pull-right">24</span></a></li>
+                        <li><a data-a-href="" href="articleList.html">草稿列表<span class="label label-warning pull-right">5</span></a></li>
                         <li><a href="javascript:;">写笔记</a></li>
                     </ul>
                 </li>
@@ -91,7 +91,7 @@
     </nav>
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
-            <nav class="navbar navbar-static-top aniview" av-animation="fadeInDown" style="margin-bottom: 0;opacity: 0;">
+            <nav class="navbar navbar-static-top animated fadeInDown" style="margin-bottom: 0;">
                 <div class="navbar-header">
                     <!--<a class="btn btn-primary minimalize-styl-2" href="#"><i class="fa fa-bars"></i> </a>-->
                     <span class="m-r-sm text-muted system-version">HXPENG Admin Version1.0</span>
@@ -159,13 +159,13 @@
             </ol>
         </div>
         <div id="content" class="content-container">
-            <div class="aniview" av-animation="fadeInUp" style="opacity: 0;">
+            <div class="animated fadeInUp">
                 <div class="welcome-message-box">
-                    <h2>晚上好&nbsp;,&nbsp;<span>干锅加鲁鲁</span></h2>
+                    <!--<h2>晚上好&nbsp;,&nbsp;<span>干锅加鲁鲁</span></h2>-->
                     <span id="nowTime" class="now-time-box">2016-07-09 15:34:22</span>
                 </div>
                 <section class="view-container animate-fade-up">
-                    <div class="content-char-info aniview" av-animation="fadeInUp">
+                    <div class="content-char-info animated fadeInUp">
                         <div class="close-btn-box">
                             <label style="float: left;">数据统计</label>
                             <a title="关闭" href="javascript:closeCharBox();" class="close-link">

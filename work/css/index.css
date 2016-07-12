@@ -1,9 +1,10 @@
 
 body {
-    font-family: "opensans", "Optima", "Microsoft Yahei", sans-serif;
+    font-family: Lato,"Microsoft Yahei","Helvetica Neue",Arial,sans-serif;
     font-size: 62.5%;
     color: #676a6c;
     overflow-x: hidden;
+    background: #eaeaea;
 }
 a:hover,a:active,a:visited,a:focus{
     text-decoration: none;
@@ -21,7 +22,7 @@ a:hover,a:active,a:visited,a:focus{
     height: 100%;
     border-right:1px solid #d7d7d7;
     width: 220px;
-    background-color: #f1f1f1;
+    background-color: #1c2b36;
 }
 .img-circle {
     border-radius: 50%;
@@ -54,17 +55,21 @@ a:hover,a:active,a:visited,a:focus{
     padding: 14px 20px 14px 25px;
 }
 .nav > li.active > a {
-    background: #FFFFFF;
+    background: #131e26;
 }
 /*.navbar-default .nav > li > a:hover,*/
 /*.navbar-default .nav > li > a:focus {*/
     /*background-color: #1BB7A0;*/
     /*color: #fafafa;*/
 /*}*/
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #131e26;
+}
 .nav-second-level > li > a:hover,
 .nav-second-level > li > a:focus{
-    background-color: #1BB7A0;
-    color: #fafafa;
+    background-color: #131e26;
+    color: #767676;
 }
 
 .nav > li > a i {
@@ -80,14 +85,14 @@ a:hover,a:active,a:visited,a:focus{
     content: "\f107";
 }
 .nav-second-level{
-    background: #FFFFFF;
+    background: #131e26;
 }
 .nav-second-level li,
 .nav-third-level li {
     border-bottom: none !important;
 }
-.nav-second-level .active > a{
-    background-color: #1BB7A0!important;
+.nav-second-level .active > a,.nav-second-level .active > a:focus,
+.nav-second-level .active > a:active,.nav-second-level .active > a:visited{
     color: #fafafa;
 }
 .nav-second-level li a {
@@ -106,7 +111,7 @@ a:hover,a:active,a:visited,a:focus{
     transition: all ease-in-out .3s;
 }
 #page-wrapper {
-    background: #FFFFFF;
+    background: #eaeaea;
     position: inherit;
     margin: 0 0 0 220px;
     position: relative !important;
@@ -240,7 +245,7 @@ a:hover,a:active,a:visited,a:focus{
     font-weight: normal;
 }
 .breadcrumb {
-    background-color: #FFFFFF;
+    background-color: #eaeaea;
 }
 .breadcrumb a{
     text-decoration: none;

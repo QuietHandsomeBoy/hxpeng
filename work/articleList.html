@@ -25,7 +25,7 @@
 <body>
 <div id="myWorld">
     <nav class="left-menu">
-        <div class="sidebar-collapse aniview" av-animation="fadeInLeft" style="opacity:0;">
+        <div class="sidebar-collapse animated fadeInLeft">
             <div class="nav-header">
                 <div class="dropdown profile-element">
                     <span><img alt="image" class="img-circle" src="../images/head.png"></span>
@@ -92,8 +92,7 @@
     </nav>
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
-            <nav class="navbar navbar-static-top aniview" av-animation="fadeInDown"
-                 style="margin-bottom: 0;opacity: 0;">
+            <nav class="navbar navbar-static-top animated fadeInDown" style="margin-bottom: 0;">
                 <div class="navbar-header">
                     <!--<a class="btn btn-primary minimalize-styl-2" href="#"><i class="fa fa-bars"></i> </a>-->
                     <span class="m-r-sm text-muted system-version">HXPENG Admin Version1.0</span>
@@ -164,32 +163,21 @@
             <div>
                 <div class="row">
                     <div class="col-lg-3">
-                        <div id="left-box">
+                        <div id="left-box" class="animated fadeInUp">
                             <div class="left-box-content">
                                 <div class="file-manager">
-                                    <div class="search-box">
-                                        <a href="javascript:;" id="searchBtn">Search</a>
+                                    <div class="left-box-tab-header">
+                                        <ul id="navigation">
+                                            <li><a class="active" href="javascript:;">全部<span class="label label-info pull-right">34</span></a></li>
+                                            <li><a href="javascript:;">笔记<span class="label label-info pull-right">18</span></a></li>
+                                            <li><a href="javascript:;">日记<span class="label label-info pull-right">11</span></a></li>
+                                            <li><a href="javascript:;">其他<span class="label label-info pull-right">5</span></a></li>
+                                        </ul>
                                     </div>
                                     <h5>Title Like</h5>
                                     <div class="form-group">
                                         <input type='text' class="form-control"/>
                                     </div>
-                                    <h5>Folders</h5>
-                                    <ul class="folder-list" style="padding: 0">
-                                        <li><input type="checkbox" class="i-checks"><label class="">笔记</label></li>
-                                        <li><input type="checkbox" class="i-checks"><label class="">日记</label></li>
-                                        <li><input type="checkbox" class="i-checks"><label class="">其他</label></li>
-                                    </ul>
-                                    <h5>Categories</h5>
-                                    <ul class="category-list">
-                                        <li><label class=""><input type="checkbox" class="i-checks">Work</label></li>
-                                        <li><label class=""><input type="checkbox" class="i-checks">Documents</label>
-                                        </li>
-                                        <li><label class=""><input type="checkbox" class="i-checks">Social</label></li>
-                                        <li><label class=""><input type="checkbox" class="i-checks">Advertising</label>
-                                        </li>
-                                        <li><label class=""><input type="checkbox" class="i-checks">Clients</label></li>
-                                    </ul>
                                     <h5>Time Frame</h5>
                                     <div class="form-group">
                                         <span>startDate：</span>
@@ -205,6 +193,16 @@
                                                     class="glyphicon glyphicon-calendar"></span></span>
                                         </div>
                                     </div>
+                                    <!--<h5>Categories</h5>-->
+                                    <!--<ul class="category-list">-->
+                                        <!--<li><label class=""><input type="checkbox" class="i-checks">Work</label></li>-->
+                                        <!--<li><label class=""><input type="checkbox" class="i-checks">Documents</label>-->
+                                        <!--</li>-->
+                                        <!--<li><label class=""><input type="checkbox" class="i-checks">Social</label></li>-->
+                                        <!--<li><label class=""><input type="checkbox" class="i-checks">Advertising</label>-->
+                                        <!--</li>-->
+                                        <!--<li><label class=""><input type="checkbox" class="i-checks">Clients</label></li>-->
+                                    <!--</ul>-->
                                     <h5>Others</h5>
                                     <div class="other-condition form-group">
                                         <label class="">
@@ -223,6 +221,9 @@
                                             <input type="checkbox" class="i-checks">限制评论
                                         </label>
                                     </div>
+                                    <div class="search-box">
+                                        <a href="javascript:;" id="searchBtn">Search</a>
+                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -234,9 +235,13 @@
                                 <h2> 全部 (16) </h2>
                                 <div class="list-pagination-box pull-right">
                                     <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i></button>
+                                    <button class="btn btn-white btn-sm active">1</button>
+                                    <button class="btn btn-white btn-sm">2</button>
+                                    <button class="btn btn-white btn-sm">3</button>
                                     <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i></button>
                                 </div>
                                 <div class="header-tool-box">
+                                    <button class="btn-white btn-sm"><i class="fa fa-check-square-o"></i> Toggle All</button>
                                     <button class="btn-white btn-sm"><i class="fa fa-refresh"></i> Refresh</button>
                                     <button class="btn-white btn-sm"><i class="fa fa-edit"></i> Edit</button>
                                     <button class="btn-white btn-sm"><i class="fa fa-trash"></i> Delete</button>
@@ -245,29 +250,258 @@
                             </div>
                             <div class="list-content-box">
                                 <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Article Title</th>
+                                        <th>Article Type</th>
+                                        <th>Likes</th>
+                                        <th>Reads</th>
+                                        <th>Comments</th>
+                                        <th>Admin</th>
+                                        <th><a href="javascript:;">Create Time<i class="fa fa-angle-down"></i></a></th>
+                                    </tr>
+                                    </thead>
                                     <tbody>
                                     <tr>
                                         <td>
                                             <input type="checkbox" class="i-checks">
                                         </td>
-                                        <td><label class="label label-biji pull-left">笔记</label><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
-                                        <td>Lorem ipsum dolor noretek imit set.</td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-biji">笔记</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
                                         <td>2016-07-12</td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <input type="checkbox" class="i-checks">
                                         </td>
-                                        <td><label class="label label-riji pull-left">日记</label><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
-                                        <td>Lorem ipsum dolor noretek imit set.</td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-riji">日记</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
                                         <td>2016-07-12</td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <input type="checkbox" class="i-checks">
                                         </td>
-                                        <td><label class="label label-qita pull-left">其他</label><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
-                                        <td>Lorem ipsum dolor noretek imit set.</td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
+                                        <td>2016-07-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks">
+                                        </td>
+                                        <td><a href="javascript:;" class="article-title">There is something in the New York air that makes sleep useless</a></td>
+                                        <td><label class="label label-qita">其他</label></td>
+                                        <td>120</td>
+                                        <td>310</td>
+                                        <td>70</td>
+                                        <td>干锅加鲁鲁</td>
                                         <td>2016-07-12</td>
                                     </tr>
                                     </tbody>
@@ -278,15 +512,45 @@
                     </div>
                 </div>
             </div>
+            <script>
+                $(".form-group .date").datetimepicker({
+                    autoclose: true,
+                    todayBtn: true
+                });
+                $('.category-list .i-checks').iCheck({
+                    checkboxClass: 'icheckbox_flat-blue'
+                });
+                $('.other-condition .i-checks').iCheck({
+                    checkboxClass: 'icheckbox_flat-orange'
+                });
+                $('.folder-list .i-checks').each(function(){
+                    var self = $(this),
+                            label = self.next(),
+                            label_text = label.text();
+
+                    label.remove();
+                    self.iCheck({
+                        checkboxClass: 'icheckbox_line-blue',
+                        radioClass: 'icheckbox_line-blue',
+                        insert: '<div class="icheck_line-icon"></div>' + label_text
+                    });
+                });
+                $('.folder-list .i-checks').iCheck('check');
+
+                $('.list-content-box .i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green'
+                });
+                $(function(){
+                    $("#navigation li a").click(function(){
+                        $("#navigation li a").each(function(){
+                            $(this).removeClass("active");
+                        })
+                        $(this).addClass("active");
+                    })
+                })
+            </script>
         </div>
     </div>
 </div>
-<script>
-    $('.aniview').AniView();
-    $(".form-group .date").datetimepicker({
-        autoclose: true,
-        todayBtn: true
-    });
-</script>
 </body>
 </html>

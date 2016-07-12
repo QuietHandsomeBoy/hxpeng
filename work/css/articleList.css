@@ -10,44 +10,49 @@
     padding: 10px;
     clear: both;
 }
+.form-group input{
+    padding: 20px 12px;
+    background: #efefef;
+}
 .left-box-content h5{
     color: #34424e;
     font-weight:bold;
     margin-top: 30px;
 }
-.folder-list{
-    margin-bottom: 20px;
-}
-.folder-list .icheckbox_line-blue{
-    background: #a9aaab;
-}
-.folder-list .icheckbox_line-blue:hover{
-    background: #a9aaab;
-}
-.folder-list li {
+#navigation {
     display: block;
-    margin: 10px 0px;
+    list-style: none;
+    padding: 0;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    border-radius: 2px;
+    overflow: hidden;
 }
-.folder-list li span{
-    background-color: #19a9d5;
+#navigation li{
+    border-bottom: 1px solid #c5c5c5;
 }
-.folder-list li a {
-    text-align: left;
+#navigation li:first-child{
+    border-top: 1px solid #c5c5c5;
+}
+#navigation a ,.search-box a{
+    color: #444;
     display: block;
-    padding: 10px 5px;
-    background-color: inherit;
-    border: 1px solid #dee5e7;
-    color: #313030;
-    padding: 10px 20px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    background: #FFFFFF;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-size: 14px;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
 }
-.folder-list li a:hover {
+#navigation a:active,#navigation a:hover,#navigation a.active {
+    border-left: 3px solid #1BB7A0;
+    color: #1BB7A0;
+    background-color: #ececec;
+}
+#navigation a span{
+}
 
-}
-.folder-list li i {
-    margin-right: 8px;
-    color: #3d4d5d;
-}
 .category-list {
     padding: 0;
     overflow: auto;
@@ -86,7 +91,7 @@ label:focus{
     text-align: center;
     display: inline-block;
     width: 100%;
-    padding: 16px 25px;
+    padding: 25px;
     margin-bottom: 0;
     font-size: 0.925rem;
     line-height: 1;
@@ -96,9 +101,8 @@ label:focus{
     outline: none;
     font-weight: bold;
     font-size: 14px;
-    background-color: #1ab394;
-    border-color: #1ab394;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #1ab394;
 }
 .search-box a:hover {
     background-color: #18a689;
@@ -109,10 +113,8 @@ label:focus{
 .list-main-box{
     width: 100%;
     padding: 10px 20px;
-    height: 800px;
-    background: #f3f3f4;
-    border: 1px solid #e7eaec;
     border-radius: 2px;
+    background: #FFFFFF;
 }
 .list-header-box{
     margin-bottom: 20px;
@@ -134,26 +136,35 @@ label:focus{
     border: 1px solid #d2d2d2;
 }
 
-.list-content-box{
+.list-content-box table thead tr th > a{
 
 }
-.list-content-box  .table > tbody > tr{
+.list-content-box table thead tr th > a > i{
+    padding-left: 5px;
+    font-weight: bold;
+}
+.list-content-box .table > tbody > tr > td,.list-content-box  .table > thead > tr > th{
+    text-align: center;
+}
+.list-content-box .table > tbody > tr{
     border-top: 1px solid #d6d6d6;
+    cursor: pointer;
+}
+.list-content-box .table > tbody > tr > td:nth-child(2),.list-content-box .table > thead > tr > th:nth-child(2){
+    text-align: left;
 }
 .list-content-box  .table > tbody > tr:last-child{
     border-bottom: 1px solid #d6d6d6;
 }
-.label-biji{
-    background-color: #5bc0de;
-}
-.label-riji{
-    background-color: #de985b;
-}
-.label-qita{
-    background-color: #55deb6;
+.label-biji,.label-riji,.label-qita{
+    color: #737373;
+    border: 1px solid;
 }
 .table-hover > tbody > tr:hover {
-    background-color: #e6e4e4;
+    background-color: #e6e6e6;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
 }
 .article-title{
     margin-left: 5px;
