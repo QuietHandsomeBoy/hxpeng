@@ -8,20 +8,26 @@
     <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap-select.css">
     <link type="text/css" rel="stylesheet" href="../css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <link type="text/css" rel="stylesheet" href="css/wysiwyg-editor.css">
     <link type="text/css" rel="stylesheet" href="css/icheck/icheck.css">
+    <link type="text/css" rel="stylesheet" href="css/articleList.css">
+    <link type="text/css" rel="stylesheet" href="css/insert.css">
     <link type="text/css" rel="stylesheet" href="../css/animate.min.css">
     <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap-datetimepicker.min.css">
-    <link type="text/css" rel="stylesheet" href="css/articleList.css">
-    <link type="text/css" rel="stylesheet" href="css/index.css">
     <script src="../js/jquery-1.11.3.js"></script>
-    <script src="../js/plugins.js"></script>
-    <script src="js/bootstrap/bootstrap-select.js"></script>
     <script src="js/bootstrap/bootstrap.js"></script>
+    <script src="../js/plugins.js"></script>
     <script src="js/highcharts.js"></script>
+    <script src="js/bootstrap/bootstrap-select.js"></script>
     <script src="js/bootstrap/bootstrap-datetimepicker.min.js"></script>
-    <script src="js/icheck.js"></script>
-    <script src="js/jquery.aniview.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/icheck.js"></script>
+    <script src="js/wysiwyg/wysiwyg-editor.js"></script>
+    <script src="js/wysiwyg/wysiwyg.js"></script>
+    <script src="js/insert.js"></script>
+    <script src="js/jquery.aniview.min.js"></script>
+    <script src="js/jquery.twbsPagination.js"></script>
     <title>MyBolg</title>
 </head>
 <body>
@@ -45,7 +51,7 @@
                     <a href="layouts.html"><i class="fa fa-book"></i> <span class="nav-label">Article</span><span
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse" style="height: 0px;">
-                        <li><a data-a-href="" href="articleList.html">笔记列表<span class="label label-warning pull-right">24</span></a></li>
+                        <li><a href="articleList.html">笔记列表<span class="label label-warning pull-right">24</span></a></li>
                         <li><a href="javascript:;">写笔记</a></li>
                     </ul>
                 </li>
@@ -97,7 +103,7 @@
                     <!--<a class="btn btn-primary minimalize-styl-2" href="#"><i class="fa fa-bars"></i> </a>-->
                     <span class="m-r-sm text-muted system-version">HXPENG Admin Version1.0</span>
                 </div>
-                <ul class="nav navbar-top-links navbar-right top-nav">
+                <ul class="nav navbar-top-links navbar-right">
                     <li>
                         <!--<span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>-->
                     </li>
@@ -155,98 +161,117 @@
         <div class="breadcrumb-box">
             <ol class="breadcrumb">
                 <li><a href="javascript:;">Home</a></li>
-                <li><a HREF="javascript:;">&nbsp;</a></li>
+                <li><a HREF="javascript:;">笔记列表</a></li>
                 <!--<li class="active"><strong>Flot Charts</strong></li>-->
             </ol>
         </div>
         <div id="content" class="content-container">
-            <div class="animated fadeInUp">
-                <div class="welcome-message-box">
-                    <!--<h2>晚上好&nbsp;,&nbsp;<span>干锅加鲁鲁</span></h2>-->
-                    <span id="nowTime" class="now-time-box">2016-07-09 15:34:22</span>
+            <div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div id="left-box" class="animated fadeInUp">
+                            <div class="left-box-content">
+                                <div class="file-manager">
+                                    <h5>所属分类</h5>
+                                    <div class="type-confition form-group">
+                                        <input type="radio" name="article-type" class="i-checks">
+                                        <label class="">日记</label>
+                                        <input type="radio" name="article-type" class="i-checks">
+                                        <label class="">笔记</label>
+                                        <input type="radio" name="article-type" class="i-checks">
+                                        <label class="">其他</label>
+                                    </div>
+                                    <h5>关键字设置<label class="label label-gray">用&nbsp;|&nbsp;字符隔开&nbsp;;&nbsp;最多设置四个关键字</label></h5>
+                                    <div class="key-words form-group">
+                                        <input type='text' class="form-control key-words-input"/>
+                                    </div>
+                                    <h5>标签设置</h5>
+                                    <ul class="tags-list">
+                                        <li><label class=""><input type="checkbox" class="i-checks">Work</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Documents</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Social</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Advertising</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Clients</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Work</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Documents</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Social</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Advertising</label></li>
+                                        <li><label class=""><input type="checkbox" class="i-checks">Clients</label></li>
+                                    </ul>
+                                    <h5>其他设置</h5>
+                                    <div class="other-condition form-group">
+                                        <label class="">
+                                            <input checked type="checkbox" class="i-checks">公开
+                                        </label>
+                                        <label class="">
+                                            <input type="checkbox" class="i-checks">置顶
+                                        </label>
+                                        <label class="">
+                                            <input type="checkbox" class="i-checks">限制评论
+                                        </label>
+                                    </div>
+                                    <div class="save-as-draft-box">
+                                        <a href="javascript:;" id="save-as-draft">保存为草稿</a>
+                                    </div>
+                                    <div class="view-article-box">
+                                        <a href="insert.html" id="view-article">预览</a>
+                                    </div>
+                                    <div class="save-article-box">
+                                        <a href="insert.html" id="save-article">保存</a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="right-main-box animated fadeInRight">
+                            <div class="article-info-box">
+                                <h3> Compose A New Article </h3>
+                                <div class="article-title-box">
+                                    <h5>choose the type of article and enter the title</h5>
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <select class="selectpicker">
+                                                <option value="1">Mustard</option>
+                                                <option value="11">Ketchup</option>
+                                                <option value="12">Relish</option>
+                                                <option value="13">Mustard</option>
+                                                <option value="1124">Ketchup</option>
+                                            </select>
+                                            <script>
+                                                $('.selectpicker').selectpicker({
+                                                    size: 4,
+                                                    showIcon:true,
+                                                    showTick:true,
+                                                    style:'select-btn'
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <input placeholder="请输入标题.." type="text" class="">
+                                        </div>
+                                    </div>
+                                    <h5>enter the introduce of article</h5>
+                                    <div class="title-introduce-box">
+                                        <textarea id="summary" style="">测试！！测试！！测试！！测试！！</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="article-content-box" class="article-content-box">
+                                <textarea id="article-content" name="editor">在此输入正文...</textarea>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
                 </div>
-                <section class="view-container animate-fade-up">
-                    <div class="content-char-info animated fadeInUp">
-                        <div class="close-btn-box">
-                            <label style="float: left;">数据统计</label>
-                            <a title="关闭" href="javascript:closeCharBox();" class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                        <div class="home-box">
-                            <div class="bar-chart-box">
-                                <div id="bar-chart-container"></div>
-                            </div>
-
-                            <!--<div class="home-img-box">-->
-                            <!--<img src="images/background5.jpg">-->
-                            <!--</div>-->
-                        </div>
-                    </div>
-
-                    <div class="top-info">
-                        <div class="row">
-                            <div class="text-center">
-                                <div class="col-lg-3">
-                                    <div class="panel mini-box">
-                                    <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-success bg-book">
-                                        <span class="fa fa-book"></span>
-                                    </span>
-                                        <div class="box-info">
-                                            <p class="size-h2"><strong>129</strong><span class="size-h4">篇</span></p>
-                                            <p class="text-muted"><span class="ng-scope">笔记</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="panel mini-box">
-                                    <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-success bg-comments">
-                                        <span class="fa fa-comments"></span>
-                                    </span>
-                                        <div class="box-info">
-                                            <p class="size-h2"><strong>90</strong><span class="size-h4">条</span></p>
-                                            <p class="text-muted"><span class="ng-scope">评论</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="panel mini-box">
-                                    <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-success bg-leaveMsg">
-                                        <span class="fa fa-pencil-square-o"></span>
-                                    </span>
-                                        <div class="box-info">
-                                            <p class="size-h2"><strong>120</strong><span class="size-h4">条</span></p>
-                                            <p class="text-muted"><span class="ng-scope">留言</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="panel mini-box">
-                                    <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-success bg-watchCount">
-                                        <span class="fa fa-space-shuttle"></span>
-                                    </span>
-                                        <div class="box-info">
-                                            <p class="size-h2"><strong>4203</strong><span class="size-h4">次</span></p>
-                                            <p class="text-muted"><span data-translate="GROWTH" class="ng-scope">路过</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
-
-
         </div>
     </div>
 </div>
+<div id="fullscreenBox"></div>
 <script>
-    $('.aniview').AniView();
 </script>
 </body>
 </html>

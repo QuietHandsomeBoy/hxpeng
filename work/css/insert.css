@@ -1,0 +1,107 @@
+.type-confition .icheckbox_line-blue{
+    margin: 5px 0;
+}
+.type-confition .icheckbox_line-blue, .iradio_line-blue,.type-confition .icheckbox_line-blue, .iradio_line-blue:hover {
+    background: #939ba0;
+    padding: 20px 15px 20px 38px;
+}
+.add-article-box a,.save-as-draft-box a
+,.view-article-box a,.save-article-box a{
+    margin-bottom: 15px;
+}
+.right-main-box{
+    border: 1px solid #e7eaec;
+    background: #FFFFFF;
+}
+.tags-list{
+
+}
+.tags-list li{
+    list-style: none;
+}
+.article-info-box{
+    margin-bottom: 30px;
+}
+.article-info-box .bootstrap-select{
+    width: 180px !important;
+}
+.article-info-box H3{
+    border-bottom: 1px solid #e7eaec;
+    padding: 30px 20px;
+}
+.article-info-box input{
+    width: 100%;
+    height: 49px;
+    box-shadow: 0 1px 1px #d3d1d1;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    border: 1px solid #dddddd;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #b7b7b7;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background: #fff;
+    font-weight: normal;
+    padding: 0px 15px;
+}
+.bootstrap-select .dropdown-toggle:focus,.bootstrap-select .dropdown-toggle:hover,.bootstrap-select.btn-group .dropdown-menu li a:focus {
+    outline: none !important;
+}
+.article-info-box .select-btn{
+    background-color: #F5F5F5;
+    border: 1px solid #dddddd;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #b7b7b7;
+    box-shadow: 0 1px 1px #d3d1d1;
+    height: 49px;
+}
+
+.article-title-box{
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+.article-title-box h5:first-child{
+    margin-top: 0px;
+}
+.article-title-box h5{
+    margin-top: 30px;
+}
+.title-introduce-box{
+
+}
+.title-introduce-box textarea{
+    margin: 0px;
+    width: 100%;
+    height: 60px;
+    resize: none;
+    border-radius: 4px;
+    border: 1px solid #dddddd;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #b7b7b7;
+    box-shadow: 0 1px 1px #d3d1d1;
+    outline: none;font-size: 14px;
+    height: 60px;
+    padding: 10px 15px;
+}
+.article-content-box .wysiwyg-container {
+    border:0px !important;
+}
+.article-content-box .wysiwyg-toolbar-top {
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #35556b!important;
+}
+.article-content-box .wysiwyg-toolbar-icon {
+    color: #FFFFFF !important;
+}
+.full-screen-style{
+    position: absolute;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 666;
+}

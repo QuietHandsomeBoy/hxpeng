@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="ec3ae285-065d-4190-a4a9-8be4384a704b" name="hxpeng" url="http://192.168.3.73:8080/hxpeng">
+      <webServer id="ec3ae285-065d-4190-a4a9-8be4384a704b" name="hxpeng" url="http://192.168.3.91:8080/hxpeng">
         <fileTransfer mountedRoot="D:\projects\webStormProjects\hxpeng" accessType="MOUNT" />
       </webServer>
     </option>

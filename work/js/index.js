@@ -7,7 +7,7 @@ $(function () {
     $('#side-menu').metisMenu();
 
 
-    $(document).pjax(".nav-second-level a", "#content", {fragment:'#content'})
+    $(document).pjax("a", "#content", {fragment:'#content'})
         .on("pjax:timeout", function (event) {
             event.preventDefault()
         })

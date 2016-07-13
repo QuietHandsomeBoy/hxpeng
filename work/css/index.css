@@ -6,6 +6,13 @@ body {
     overflow-x: hidden;
     background: #eaeaea;
 }
+button[disabled], html input[disabled] {
+    cursor:not-allowed;
+    background: rgba(227, 227, 227, 0.48);
+}
+ul li{
+    list-style: none;
+}
 a:hover,a:active,a:visited,a:focus{
     text-decoration: none;
 }
@@ -65,6 +72,9 @@ a:hover,a:active,a:visited,a:focus{
 .nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
     background-color: #131e26;
+}
+.top-nav > li > a:hover, .top-nav > li > a:focus{
+    background-color: #f3f3f4;
 }
 .nav-second-level > li > a:hover,
 .nav-second-level > li > a:focus{
